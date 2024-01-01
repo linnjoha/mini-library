@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=IM+Fell+English&family=IM+Fell+French+Canon&family=Roboto+Serif:opsz,wght@8..144,300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(2, 52, 2);
+  background-image: url("/images/annie-spratt-h-LcVG8W1XY-unsplash.jpg");
+  background-size: cover;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: auto 0;
+  height: 100vh;
+}
+header {
+  width: 100vw;
+  padding: 2rem;
+  margin-bottom: 3%;
+}
+.title {
+  color: rgba(213, 213, 51, 0.9);
+  /* font-family: "IM Fell English", serif;*/
+  font-family: "IM Fell French Canon", serif;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+}
+main {
+  min-height: min-content;
+}
+.bookshelf {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3%;
+  margin: 0 0 2% 0;
+  border-bottom: 0.8rem inset rgba(72, 55, 34, 0.8);
+  border-radius: 3px;
+  box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.39);
+  min-height: min-content;
+  min-width: 350px;
+}
+
+.book {
+  min-height: 200px;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: min-content;
+  border: 2px solid rgba(0, 0, 0, 0.808);
+  background-color: rgba(89, 45, 13, 0.8);
+  background-size: cover;
+  background-image: url("/images/bookshelf.jpg");
+  border-radius: 4px;
+  box-shadow: -8px 3px 3px 0px rgba(0, 0, 0, 0.39);
+  cursor: pointer;
+}
+.book-container {
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(250, 250, 250, 0.317);
+  margin-top: 4%;
+  min-width: 350px;
+  max-width: fit-content;
+}
+.book-title {
+  font-family: "IM Fell French Canon", serif;
+  font-size: 1.1rem;
+  text-shadow: 0 0 3px rgba(213, 213, 51, 0.6);
+}
+.book-author {
+  font-family: "IM Fell French Canon", serif;
+  text-shadow: 0 0 3px rgba(213, 213, 51, 0.6);
+  font-size: 0.9rem;
+  font-weight: bolder;
+  font-style: italic;
+}
+.chosen-book {
+  display: flex;
+}
+.book-cover {
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: black;
+  color: antiquewhite;
+  width: 40%;
+  min-height: 250px;
+  max-width: 230px;
+}
+.book-info {
+  padding: 3%;
+
+  min-height: 250px;
+}
+@media (min-width: 1050px) {
+  body {
+    background-size: 33.3% 100%;
+  }
+  main {
+    display: flex;
+  }
+  .book-container {
+    flex-direction: row;
+    width: 68%;
+  }
+  .book-info {
+    width: 80%;
+  }
+  .book-cover {
+    width: 230px;
+  }
+}

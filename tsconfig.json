@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "outDir": "./dist",
+    "strict": true,
+    "noImplicitAny": true
+  },
+  "include": ["./src/index.ts"]
+}
