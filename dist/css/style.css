@@ -54,7 +54,6 @@ main {
   justify-content: space-between;
   max-width: min-content;
   border: 2px solid rgba(0, 0, 0, 0.808);
-  background-color: rgba(89, 45, 13, 0.8);
   background-size: cover;
   background-image: url("/images/bookshelf.jpg");
   border-radius: 4px;
@@ -64,7 +63,7 @@ main {
 .book-container {
   flex-direction: column;
   align-items: center;
-  background-color: rgba(250, 250, 250, 0.317);
+  background-color: rgba(250, 250, 250, 0.517);
   margin-top: 4%;
   min-width: 350px;
   max-width: fit-content;
@@ -83,23 +82,55 @@ main {
 }
 .chosen-book {
   display: flex;
+  padding: 2%;
 }
 .book-cover {
+  margin: 2%;
   padding: 2%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: black;
+  border: 2px solid rgba(0, 0, 0, 0.808);
+  border-radius: 4px;
+  box-shadow: -8px 3px 3px 0px rgba(0, 0, 0, 0.39);
   color: antiquewhite;
   width: 40%;
   min-height: 250px;
   max-width: 230px;
 }
-.book-info {
-  padding: 3%;
+#exit {
+  background-color: rgba(255, 255, 255, 0.699);
+  font-size: 1rem;
 
-  min-height: 250px;
+  padding: 2px;
+  align-self: baseline;
+  cursor: pointer;
+  font-weight: 900;
+  border: 1px solid black;
 }
+.book-info {
+  min-height: 250px;
+  max-width: 650px;
+}
+.book-info p {
+  padding-top: 2%;
+  font-weight: 900;
+  font-family: "Roboto Serif", serif;
+}
+.about-author {
+  font-style: italic;
+}
+#bookSmallAbouts {
+  background-color: rgba(0, 0, 0, 0.377);
+  font-weight: 900;
+  font-size: 0.8rem;
+  padding: 1%;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+}
+
 @media (min-width: 1050px) {
   body {
     background-size: 33.3% 100%;
@@ -116,5 +147,9 @@ main {
   }
   .book-cover {
     width: 230px;
+  }
+  #bookSmallAbouts {
+    width: 20%;
+    height: 25%;
   }
 }
