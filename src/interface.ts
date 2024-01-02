@@ -5,4 +5,5 @@ export interface book {
   pages: number;
   year: number;
   plot: string;
+  id: number;
 }

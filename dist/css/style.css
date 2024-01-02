@@ -21,7 +21,17 @@ body {
 header {
   width: 100vw;
   padding: 2rem;
-  margin-bottom: 3%;
+}
+.search-container {
+  margin-top: 1%;
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+}
+.search-container p {
+  cursor: pointer;
+  padding: 1%;
+  color: white;
 }
 .title {
   color: rgba(213, 213, 51, 0.9);
@@ -46,6 +56,10 @@ main {
   min-width: 350px;
 }
 
+#book5 {
+  transform: rotate(10deg);
+}
+
 .book {
   min-height: 200px;
   width: auto;
@@ -60,11 +74,11 @@ main {
   box-shadow: -8px 3px 3px 0px rgba(0, 0, 0, 0.39);
   cursor: pointer;
 }
+/* styling for the info container */
 .book-container {
-  flex-direction: column;
-  align-items: center;
   background-color: rgba(250, 250, 250, 0.517);
-  margin-top: 4%;
+  margin-top: 2%;
+  padding: 2%;
   min-width: 350px;
   max-width: fit-content;
 }
@@ -80,36 +94,41 @@ main {
   font-weight: bolder;
   font-style: italic;
 }
+
 .chosen-book {
   display: flex;
-  padding: 2%;
+  flex-direction: column;
+  align-items: center;
 }
 .book-cover {
   margin: 2%;
-  padding: 2%;
+  padding: 1.2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: black;
-  border: 2px solid rgba(0, 0, 0, 0.808);
+  background-image: url("/images/book-cover.jpg");
+  background-size: cover;
+  background-position: center;
+  border: 2px solid rgba(0, 0, 0, 0.25);
   border-radius: 4px;
-  box-shadow: -8px 3px 3px 0px rgba(0, 0, 0, 0.39);
+  box-shadow: -8px 8px 3px 0px rgba(0, 0, 0, 0.6);
   color: antiquewhite;
-  width: 40%;
+  width: 200px;
   min-height: 250px;
-  max-width: 230px;
 }
 #exit {
   background-color: rgba(255, 255, 255, 0.699);
   font-size: 1rem;
-
   padding: 2px;
-  align-self: baseline;
+  align-self: flex-start;
   cursor: pointer;
   font-weight: 900;
   border: 1px solid black;
 }
 .book-info {
+  padding: 7%;
+  text-align: center;
   min-height: 250px;
   max-width: 650px;
 }
@@ -122,13 +141,15 @@ main {
   font-style: italic;
 }
 #bookSmallAbouts {
-  background-color: rgba(0, 0, 0, 0.377);
+  background-color: rgba(112, 72, 34, 0.3);
+  border: 2px outset rgba(0, 0, 0, 0.5);
   font-weight: 900;
   font-size: 0.8rem;
   padding: 1%;
-  min-height: 150px;
+  min-height: 120px;
   display: flex;
   align-items: center;
+  font-family: "Roboto Serif", serif;
 }
 
 @media (min-width: 1050px) {
@@ -143,13 +164,15 @@ main {
     width: 68%;
   }
   .book-info {
+    padding: 2%;
+    text-align: start;
     width: 80%;
   }
   .book-cover {
     width: 230px;
   }
   #bookSmallAbouts {
-    width: 20%;
-    height: 25%;
+    min-height: min-content;
+    align-self: baseline;
   }
 }
