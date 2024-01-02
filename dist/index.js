@@ -10,21 +10,24 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 const booksEl = document.querySelectorAll(".book");
 const apiUrl = "https://my-json-server.typicode.com/zocom-christoffer-wallenberg/books-api/books";
 let books = [];
+//global element variables
 const BookCoverEl = document.getElementById("bookCover");
 const infoBoxAboutEl = document.getElementById("bookInfo");
 const smallAbouts = document.getElementById("bookSmallAbouts");
 const infoBoxEl = document.querySelector(".book-container");
 const exitBookInfo = document.getElementById("exit");
-//add events on exitbutton
+const searchButtonEl = document.getElementById("searchButton");
+let listContainer = document.createElement("div");
+//eventlisteners
+//add eventlistener on exit"button"
 exitBookInfo.addEventListener("click", () => {
     infoBoxEl.classList.remove("chosen-book");
     clearSearch(listContainer);
 });
-const searchButtonEl = document.getElementById("searchButton");
-searchButtonEl === null || searchButtonEl === void 0 ? void 0 : searchButtonEl.addEventListener("click", () => {
+//add eventlisteners on the searchbutton
+searchButtonEl.addEventListener("click", () => {
     searchBook();
 });
-let listContainer = document.createElement("div");
 //
 // fetch with apiUrl and saves the response as interface book and calls on the addbooks function
 const fetchBooks = () => __awaiter(void 0, void 0, void 0, function* () {
@@ -53,6 +56,7 @@ const addBooks = (books) => {
         });
     });
 };
+//adds classlist on the infobox, so it will be visable and creates all the elements on the specific book
 const createAboutBook = (books, i) => {
     var _a;
     infoBoxEl.classList.add("chosen-book");
@@ -64,7 +68,7 @@ const createAboutBook = (books, i) => {
     bookAuthor.innerText = books[i].author;
     BookCoverEl.appendChild(bookTitle);
     BookCoverEl.appendChild(bookAuthor);
-    // creates the info-pages
+    // creates the info the elements with, title, author and plot.
     const aboutTitle = document.createElement("h1");
     aboutTitle.classList.add("book-cover-title");
     aboutTitle.innerText = books[i].title;
@@ -74,10 +78,10 @@ const createAboutBook = (books, i) => {
     aboutAuthor.classList.add("about-author");
     infoBoxAboutEl.appendChild(aboutTitle);
     infoBoxAboutEl.appendChild(aboutAuthor);
-    // about
     const aboutBook = document.createElement("p");
     aboutBook.innerText = books[i].plot;
     infoBoxAboutEl.appendChild(aboutBook);
+    // creates the small info
     const smallAboutsInfo = document.createElement("p");
     smallAboutsInfo.innerText = `Audience: ${books[i].audience} 
  Pages: ${(_a = books[i].pages) !== null && _a !== void 0 ? _a : ` `}
@@ -86,9 +90,9 @@ const createAboutBook = (books, i) => {
     smallAbouts.appendChild(smallAboutsInfo);
 };
 const clearChildren = () => {
-    BookCoverEl === null || BookCoverEl === void 0 ? void 0 : BookCoverEl.replaceChildren();
-    infoBoxAboutEl === null || infoBoxAboutEl === void 0 ? void 0 : infoBoxAboutEl.replaceChildren();
-    smallAbouts === null || smallAbouts === void 0 ? void 0 : smallAbouts.replaceChildren();
+    BookCoverEl.replaceChildren();
+    infoBoxAboutEl.replaceChildren();
+    smallAbouts.replaceChildren();
 };
 //takes input and saves to a variable
 const searchBook = () => {
@@ -96,9 +100,11 @@ const searchBook = () => {
     //filter the books that icludes the search value
     const bookSearch = books.filter((book) => book.title.toLocaleLowerCase().includes(searchBookRes));
     console.log(bookSearch);
-    createSearchList(bookSearch);
+    if (searchBookRes.length > 0) {
+        createSearchList(bookSearch);
+    }
 };
-// creates a list that you can chose a book from
+// creates a "list" with titles from the filtered book array that you can chose from
 const createSearchList = (bookSearch) => {
     const searchContainer = document.querySelector(".search-container");
     // const listContainer: HTMLElement = document.createElement("div");
@@ -107,6 +113,7 @@ const createSearchList = (bookSearch) => {
         const bookListItem = document.createElement("p");
         bookListItem.innerText = book.title;
         listContainer.appendChild(bookListItem);
+        //adds a click event on the title
         bookListItem.addEventListener("click", () => {
             clearSearch(listContainer);
             clearChildren();
@@ -115,6 +122,7 @@ const createSearchList = (bookSearch) => {
     });
     return listContainer;
 };
+// clears out the sears area and reset the placeholder
 const clearSearch = (listContainer) => {
     listContainer.remove();
     listContainer = document.createElement("div");
