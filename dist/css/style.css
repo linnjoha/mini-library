@@ -7,7 +7,7 @@
 }
 body {
   background-color: rgb(2, 52, 2);
-  background-image: url("/images/annie-spratt-h-LcVG8W1XY-unsplash.jpg");
+  background-image: url("../../images/annie-spratt-h-LcVG8W1XY-unsplash.jpg");
   background-size: cover;
 }
 
@@ -72,7 +72,7 @@ main {
   max-width: min-content;
   border: 2px solid rgba(0, 0, 0, 0.808);
   background-size: cover;
-  background-image: url("/images/bookshelf.jpg");
+  background-image: url("../../images/bookshelf.jpg");
   border-radius: 4px;
   box-shadow: -8px 3px 3px 0px rgba(0, 0, 0, 0.39);
   cursor: pointer;
@@ -110,7 +110,7 @@ main {
   flex-direction: column;
   justify-content: space-between;
   background-color: black;
-  background-image: url("/images/book-cover.jpg");
+  background-image: url("../../images/book-cover.jpg");
   background-size: cover;
   background-position: center;
   border: 2px solid rgba(0, 0, 0, 0.25);

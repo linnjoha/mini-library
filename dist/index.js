@@ -37,7 +37,7 @@ const fetchBooks = () => __awaiter(void 0, void 0, void 0, function* () {
     addBooks(books);
 });
 fetchBooks();
-//adds title and author on the books on the shelf
+//adds title and author on the books on the "shelf"
 const addBooks = (books) => {
     booksEl.forEach((bookEl, i) => {
         const bookTitle = document.createElement("h2");
@@ -48,6 +48,7 @@ const addBooks = (books) => {
         bookAuthor.classList.add("book-author");
         bookEl.appendChild(bookTitle);
         bookEl.appendChild(bookAuthor);
+        //when you click on a book on the "shelf"
         bookEl.addEventListener("click", () => {
             //first we remove all the children if there's any
             clearChildren();
